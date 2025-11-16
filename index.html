@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ruma</title>
+<style>
+body{
+  margin:0;padding:0;
+  background:black;
+  color:white;font-family:Arial;text-align:center;
+}
+.page{display:none;padding:20px;}
+.visible{display:block;}
+#countCircle{
+  width:160px;height:160px;border-radius:50%;
+  display:grid;place-items:center;font-size:60px;
+  border:4px solid white;margin:40px auto;
+  animation:rgbGlow 1s infinite alternate;
+}
+.next-btn{
+  padding:12px 25px;font-size:20px;border:none;
+  border-radius:50px;background:black;color:white;
+  animation:rgbGlow 1s infinite alternate;cursor:pointer;margin-top:20px;
+}
+@keyframes rgbGlow{
+  0%{box-shadow:0 0 15px red;}
+  25%{box-shadow:0 0 15px green;}
+  50%{box-shadow:0 0 15px blue;}
+  75%{box-shadow:0 0 15px purple;}
+  100%{box-shadow:0 0 15px cyan;}
+}
+.mySlides{display:none;}
+.mySlides img{width:90%;border-radius:15px;animation:rgbGlow 1s infinite alternate;}
+.balloon{font-size:70px;margin:15px;cursor:pointer;}
+.candle{width:15px;height:40px;background:white;margin:10px auto;border-radius:5px;position:relative;}
+.flame{width:18px;height:18px;background:yellow;border-radius:50%;position:absolute;top:-22px;left:-2px;animation:flameGlow .3s infinite alternate;}
+@keyframes flameGlow{0%{box-shadow:0 0 10px yellow;}100%{box-shadow:0 0 25px orange;}}/* Firework Flash Effect */ @keyframes fireFlash { 0% { box-shadow:0 0 5px pink; } 25% { box-shadow:0 0 15px blue; } 50% { box-shadow:0 0 25px cyan; } 75% { box-shadow:0 0 15px purple; } 100% { box-shadow:0 0 5px pink; } } .next-btn:active{ animation:fireFlash 0.5s ease-out; } </style>
+
+</head>
+<body><!-- PAGE 0 COUNTING --><div id="page0" class="page visible">
+  <h2>HAPPY BIRTHDAY MY DEAR RUMA</h2>
+  <div id="countCircle">1</div>
+  <p>Wait for your special moment…</p>
+</div><!-- PAGE 1 MAIN PHOTO --><div id="page1" class="page">
+  <img src="G.png" style="width:90%;max-width:600px;border-radius:15px;animation:rgbGlow 1s infinite alternate;">
+  <p>আজ থেকে আঠারো বছর আগে, একটি ছোট্ট মিষ্টি ফুল পৃথিবীতে এসে আমার জীবনকে অনন্য করে দিয়েছে। তুমি আমার জীবনের সবচেয়ে সুন্দর আশীর্বাদ, শুভ জন্মদিন আমার প্রিয়তম।</p>
+  <button class="next-btn" onclick="nextPage()">BIRTHDAY VIDEO ▶</button>
+</div><!-- PAGE 2 VIDEO --><div id="page2" class="page">
+  <video id="videoJ" width="300" controls style="border-radius:15px;">
+    <source src="J.mp4" type="video/mp4">
+  </video>
+  <button class="next-btn" id="videoNextBtn" style="display:none;" onclick="nextPage()">Next ▶ Photos</button>
+</div><!-- PAGE 3 SLIDER --><div id="page3" class="page">
+  <h2>Your Photos 💖</h2>
+  <div class="mySlides"><img src="A.png"></div>
+  <div class="mySlides"><img src="B.png"></div>
+  <div class="mySlides"><img src="C.jpg"></div>
+  <div class="mySlides"><img src="D.png"></div>
+  <div class="mySlides"><img src="E.png"></div>
+  <div class="mySlides"><img src="F.png"></div>
+  <div class="mySlides"><img src="G.png"></div>
+  <button class="next-btn" onclick="nextPage()">Next ▶ Cake</button>
+</div><!-- PAGE 4 CAKE --><div id="page4" class="page">
+  <h1>🎉 BIRTHDAY CAKE 🎉</h1>
+  <img src="H.jpg" style="width:90%;max-width:500px;border-radius:15px;animation:rgbGlow 1s infinite alternate;">
+  <div style="display:flex;justify-content:center;gap:25px;margin-top:20px;">
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+    <div class="candle"><div class="flame"></div></div>
+  </div>
+  <button class="next-btn" onclick="nextPage()">Surprise Gift ▶</button>
+</div><!-- PAGE 5 BALLOONS --><div id="page5" class="page">
+  <h2>Pop the balloons!</h2>
+  <div class="balloon" onclick="popBalloon(this,'You')">🎈</div>
+  <div class="balloon" onclick="popBalloon(this,'are')">🎈</div>
+  <div class="balloon" onclick="popBalloon(this,'a')">🎈</div>
+  <div class="balloon" onclick="popBalloon(this,'cutiee')">🎈</div>
+  <div id="balloonWords" style="color:pink; margin-top:20px;font-size:30px;animation:rgbGlow 1s infinite alternate;"></div>
+  <button class="next-btn" onclick="nextPage()">Next ▶</button>
+</div><!-- PAGE 6 FINAL --><div id="page6" class="page">
+  <h2 style="animation:rgbGlow 1s infinite alternate;">Final Wishes 💖</h2>  <p style="animation:rgbGlow 1s infinite alternate;">“তোমার হাসিটা দেখলে মনে হয়, আজ জন্মদিনটা শুধু তোমার নয়, আমারও যেন সুখের দিন।”</p>
+  <p style="animation:rgbGlow 1s infinite alternate;">“তুমি এমন একজন, যার জন্মদিনে শুভেচ্ছা জানাতে গিয়ে মন একটু বেশিই কাঁপে।”</p>
+  <p style="animation:rgbGlow 1s infinite alternate;">“জন্মদিনে শুধু শুভেচ্ছা না, চাই তোমার পাশে থাকার সুযোগও—চিরদিনের জন্য।”</p>
+  <p style="animation:rgbGlow 1s infinite alternate;">“তোমাকে শুভেচ্ছা জানাতে গিয়ে মনে হয়, যদি প্রতিটি দিন আজকের মতো হতো।”</p>
+  <p style="animation:rgbGlow 1s infinite alternate;">“আজ তোমার জন্মদিন, আর আমার মনে হচ্ছে—তুমি থাকা মানেই উৎসব।”</p><button class="next-btn" onclick="nextPage()">Next ▶</button class="next-btn" onclick="nextPage()">Next ▶</button>
+
+</div><div id="page7" class="page">
+  <h2 style="margin-top:40px;font-size:32px;animation:rgbGlow 1s infinite alternate;">HAPPY BIRTHDAY MY DEAR RUMA 🎂</h2>
+</div><script>
+let current = 0;
+function showPage(n){
+  for(let i=0;i<=6;i++){
+    const p=document.getElementById("page"+i);
+    if(p) p.classList.remove("visible");
+  }
+  document.getElementById("page"+n).classList.add("visible");
+}
+function nextPage(){current++;showPage(current);} 
+
+// COUNTING
+function startCounting(){
+  let num=1;
+  const c=document.getElementById("countCircle");
+  const t=setInterval(()=>{
+    num++;c.innerText=num;
+    if(num===3){clearInterval(t);setTimeout(()=>nextPage(),900);} 
+  },1000);
+}
+
+// BALLOON
+let s=[];
+function popBalloon(x,w){x.style.display='none';s.push(w);document.getElementById('balloonWords').innerText=s.join(' ');} 
+
+// SLIDER
+let slideIndex=0;
+function showSlides(){
+  let slides=document.getElementsByClassName("mySlides");
+  for(let i=0;i<slides.length;i++) slides[i].style.display="none";
+  slideIndex++;if(slideIndex>slides.length) slideIndex=1;
+  slides[slideIndex-1].style.display="block";
+  setTimeout(showSlides,1000);
+}
+
+// VIDEO NEXT BUTTON
+const vid=document.getElementById("videoJ");
+vid.addEventListener('ended',()=>{
+  document.getElementById("videoNextBtn").style.display='block';
+});
+
+showPage(0);
+startCounting();
+showSlides();
+</script></body>
+</html>
